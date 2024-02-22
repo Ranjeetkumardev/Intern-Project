@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FoodCard = ({ foodInfo }) => {
   const { strCategory, strCategoryThumb, strCategoryDescription } =
     foodInfo;
-   console.log(foodInfo);
+ //  console.log(foodInfo);
   return (
     <Link to={"/foodCardInfo/" + strCategory}>
       <div className=" m-4 overflow-hidden bg-white-100 bg-white-100 hover:shadow-xl w-72 h-72 rounded-lg shadow">
