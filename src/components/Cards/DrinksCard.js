@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const DrinksCard = ({ drinksInfo }) => {
   const { idDrink, strCategory, strDrinkThumb, strInstructions } = drinksInfo;
   // console.log(drinksInfo);
+  const truncate = (str, max, len) => {
+    return str.length > max ? str.substring(0, len) + "..." : str;
+  };
   return (
     <Link to={"/drinksCardInfo/" + idDrink}>
       <div className=" m-4 overflow-hidden bg-white-100 bg-white-100 hover:shadow-xl w-72 h-72 rounded-lg shadow">
@@ -12,7 +15,7 @@ const DrinksCard = ({ drinksInfo }) => {
         </div>
         <div className=" m-4 p-2">
           <h1 className="font-bold">{strCategory}</h1>
-          <p>{strInstructions}</p>
+          <p>{truncate(strInstructions, 50, 20)}</p>
         </div>
       </div>
     </Link>
